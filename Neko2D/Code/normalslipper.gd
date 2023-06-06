@@ -1,18 +1,20 @@
 extends Area2D
 
+export var initial_speed = 130  # 初期速度
+export var decay_rate = 10  # 速度の減衰率
 
-var speed = 100 #スリッパの初速
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+var target_position = Vector2.ZERO  # クリックされた位置
+var velocity = Vector2.ZERO  # 対象の速度ベクトル
 
 func _process(delta):
+	# クリックされたときの処理
 	if Input.is_action_just_pressed("mouse_click"):
-		
+		target_position = get_global_mouse_position()
+		velocity = (target_position - position).normalized() * initial_speed
+
+	# 対象の移動
+	position += velocity * delta
+
+	# 速度の減衰
+	if velocity != Vector2.ZERO:
+		velocity -= velocity * decay_rate * delta

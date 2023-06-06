@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slipper2.jpg-2703db6072f760893bbfc498004b09d9.stex"
+path="res://.import/slipper_heavy.png-847cc7440bd0add170850f3c1556d371.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://slipper2.jpg"
-dest_files=[ "res://.import/slipper2.jpg-2703db6072f760893bbfc498004b09d9.stex" ]
+source_file="res://Resources/slipper_heavy.png"
+dest_files=[ "res://.import/slipper_heavy.png-847cc7440bd0add170850f3c1556d371.stex" ]
 
 [params]
 
