@@ -14,5 +14,8 @@ func _ready():
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("mouse_click"):
-		
+	if Input.is_action_just_pressed("mouse_click"): #クリックを検出
+		var mouse_pos = get_global_mouse_position() #カーソルの位置を取得
+		var direction = mouse_pos - global_position 
+		direction = direction.normalized()
+		global_position += direction * speed * delta
