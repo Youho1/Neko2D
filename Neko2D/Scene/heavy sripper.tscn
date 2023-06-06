@@ -6,7 +6,7 @@
 radius = 104.394
 height = 324.592
 
-[node name="Area2D" type="Area2D"]
+[node name="heavy sripper" type="Area2D"]
 
 [node name="SlipperHeavy" type="Sprite" parent="."]
 texture = ExtResource( 1 )
