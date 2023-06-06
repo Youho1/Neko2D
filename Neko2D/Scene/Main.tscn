@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://soccer_ball.png" type="Texture" id=1]
+[ext_resource path="res://soccer_field.png" type="Texture" id=2]
+
+[node name="Main" type="Node2D"]
+
+[node name="SoccerField" type="Sprite" parent="."]
+position = Vector2( 512.5, 303.5 )
+scale = Vector2( 2.054, 1.71795 )
+texture = ExtResource( 2 )
+
+[node name="SoccerBall" type="Sprite" parent="."]
+position = Vector2( 233, 397 )
+scale = Vector2( 0.09, 0.09 )
+texture = ExtResource( 1 )
