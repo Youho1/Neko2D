@@ -1,6 +1,8 @@
 extends Area2D
 
 
+var speed = 100 #スリッパの初速
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -12,6 +14,5 @@ func _ready():
 
 
 func _process(delta):
-	var mouse_position = get_global_mouse_position()
-	print("mouse_position")
-#	pass
+	if Input.is_action_just_pressed("mouse_click"):
+		
