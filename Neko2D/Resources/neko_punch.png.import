@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/neko_punch.png-bd58f1da476c56b28a42d6e7bdf49c6e.stex"
+path="res://.import/neko_punch.png-670f3c0af0a6fab0506ce6ef6aaaabb4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://neko_punch.png"
-dest_files=[ "res://.import/neko_punch.png-bd58f1da476c56b28a42d6e7bdf49c6e.stex" ]
+source_file="res://Resources/neko_punch.png"
+dest_files=[ "res://.import/neko_punch.png-670f3c0af0a6fab0506ce6ef6aaaabb4.stex" ]
 
 [params]
 
