@@ -3,9 +3,8 @@
 [ext_resource path="res://Code/normalslipper.gd" type="Script" id=1]
 [ext_resource path="res://Resources/slipper1.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 104.394
-height = 324.592
+[sub_resource type="CircleShape2D" id=1]
+radius = 139.066
 
 [node name="normalslipper" type="Area2D"]
 script = ExtResource( 1 )
@@ -16,6 +15,7 @@ scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.38419e-07, -2.38419e-07 )
-rotation = 1.16937
+position = Vector2( 6, 3 )
+rotation = 1.18682
+scale = Vector2( 0.9, 2 )
 shape = SubResource( 1 )

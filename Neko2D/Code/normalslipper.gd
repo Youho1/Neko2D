@@ -1,6 +1,6 @@
 extends Area2D
 
-export var initial_speed = 300  # 初期速度
+export var initial_speed = 130  # 初期速度
 export var decay_rate = 10  # 速度の減衰率
 
 var target_position = Vector2.ZERO  # クリックされた位置
