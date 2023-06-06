@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/soccer_field.png-a83ddb53cb22eb569897b71f73a035bb.stex"
+path="res://.import/soccer_ball.png-d477ea6c1d31d57cf275df6ac60976a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://soccer_field.png"
-dest_files=[ "res://.import/soccer_field.png-a83ddb53cb22eb569897b71f73a035bb.stex" ]
+source_file="res://Resources/soccer_ball.png"
+dest_files=[ "res://.import/soccer_ball.png-d477ea6c1d31d57cf275df6ac60976a6.stex" ]
 
 [params]
 
