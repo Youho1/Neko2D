@@ -10,12 +10,14 @@ position = Vector2( -105, -8 )
 
 [node name="Powerful" type="Button" parent="Position2D"]
 anchor_right = 1.0
+toggle_mode = true
 text = "PPPP"
 
 [node name="Wizard" type="Button" parent="Position2D"]
 margin_left = 64.0
 margin_right = 141.0
 margin_bottom = 20.0
+toggle_mode = true
 text = "WWWWW"
 
 [node name="Shotgun" type="Button" parent="Position2D"]
@@ -23,6 +25,7 @@ margin_left = 169.0
 margin_top = 1.0
 margin_right = 269.0
 margin_bottom = 23.0
+toggle_mode = true
 text = "SSSSSSSS"
 
 [connection signal="pressed" from="Position2D/Powerful" to="." method="_on_Powerful_pressed"]

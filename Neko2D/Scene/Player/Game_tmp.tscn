@@ -12,3 +12,11 @@ position = Vector2( 61, 44 )
 
 [node name="right_bottom_player_posi" type="Position2D" parent="."]
 position = Vector2( 951, 554 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 344.0
+margin_top = 191.0
+margin_right = 427.0
+margin_bottom = 211.0
+toggle_mode = true
+text = "curve"

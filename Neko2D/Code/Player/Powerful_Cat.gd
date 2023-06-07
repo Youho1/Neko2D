@@ -6,14 +6,9 @@ extends Player
 #もし .～～()という部分にエラーが出たら.の前にsuperと書いてみてください
 
 func _ready():
-	._ready()
-	throwing_MaxF=40
+#	._ready()
+	throw_MaxForce=50
 	pass # Replace with function body.
-
-
-func throw(slipper_ob:Object,force:float): #スリッパを投げる
-	.throw(slipper_ob,force) #もしこの部分にエラーが出たら . の前にsuperと書いてみてください
-	pass
 
 
 func Set_whether_left_player(left): #左プレイヤーかどうか設定
