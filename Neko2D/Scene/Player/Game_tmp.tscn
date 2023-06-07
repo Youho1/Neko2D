@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scene/Player/Player_selection_menu.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player_selection_menu" parent="." instance=ExtResource( 2 )]
+position = Vector2( 355, 121 )
+
+[node name="left_top_player_posi" type="Position2D" parent="."]
+position = Vector2( 61, 44 )
+
+[node name="right_bottom_player_posi" type="Position2D" parent="."]
+position = Vector2( 951, 554 )
