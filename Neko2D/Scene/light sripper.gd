@@ -6,6 +6,7 @@ func _ready():
 
 func _process(delta):
 	var velocity = Vector2()
-	velocity.x += 400
+	velocity.x += 300
 	position += velocity * delta
-
+	velocity.y += 300
+	position += velocity * delta
