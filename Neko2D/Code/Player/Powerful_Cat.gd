@@ -7,7 +7,6 @@ extends Player
 
 func _ready():
 #	._ready()
-	throw_MaxForce=50
 	pass # Replace with function body.
 
 

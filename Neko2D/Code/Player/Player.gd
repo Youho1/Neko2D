@@ -13,12 +13,13 @@ var throw_slipper_ob #実際に投げるスリッパ
 const light_slipper = preload("res://Scene/Player/slipper_tmp.tscn")
 const usually_slipper = preload("res://Scene/Player/slipper_tmp.tscn")
 const heavy_slipper = preload("res://Scene/Player/slipper_tmp.tscn")
-var throw_MaxN = 1 #投げられる回数
+var throw_MaxN = 10 #投げられる回数
 var throw_Count #投げた数
-var throw_slipper_posi = Vector2(20,0) #スリッパの出現場所(プレイヤーからずらす距離)
-var throw_MaxForce = 40 #投げられる最大威力
+export var throw_slipper_posi = Vector2(20,0) #スリッパの出現場所(プレイヤーからずらす距離)
+export var throw_MaxForce = 40 #投げられる最大威力
 
-
+var throw_posi = Vector2.ZERO #投げる位置(ドラック入力開始地点)
+var throw_input = false #投げる入力を始めているかどうか
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,20 +41,32 @@ func _process(delta):
 	if Input.is_action_pressed("ui_up"):
 		velocity-=1
 	
-	#投げる入力
-	if Input.is_action_just_released("ui_accept") && throw_MaxN>throw_Count:
-		throw(throw_slipper_ob,throw_MaxForce,Vector2(1,-1))
-	
 	#プレイヤーの移動
 	velocity = velocity*speed
 	position.y+=velocity*delta
 	position.y=clamp(position.y,moving_range.x,moving_range.y)
-
+	
+	# 投げる入力
+	if Input.is_action_pressed("ui_accept"):
+		if Input.is_action_just_pressed("mouse_left"):
+			# ドラッグ開始時にマウスの座標を記録
+			throw_posi = get_global_mouse_position()
+			throw_input=true
+			print("始点:" + str(throw_posi))
+		elif throw_input && Input.is_action_just_released("mouse_left"):
+			# ドラッグ終了時にマウスの座標を取得し、距離と方向を計算
+			var mouse_posi = get_global_mouse_position()
+			var force = (mouse_posi - throw_posi).length()/5.0
+			var direction = -(mouse_posi - throw_posi).normalized()
+			force = clamp(force, 0.1, throw_MaxForce)
+			
+			throw(throw_slipper_ob, force, direction)
+			throw_input = false
+			print("力:" + str(force) + " 方向:" + str(direction.angle()))
+	else:
+		throw_input = false
 #	pass
 
-func _input(event):
-	
-	pass
 
 func throw(slipper_ob:Object,force:float=throw_MaxForce,direction:Vector2=Vector2(1,0),curve:bool=false): #スリッパを投げる
 	var slipper = slipper_ob.instance().thrown(force,curve,direction)
