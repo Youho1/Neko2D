@@ -23,22 +23,25 @@ func turn_change():
 
 
 func _on_Powerful_pressed():
-	var player_ob = Powerful.instance().Set_whether_left_player(turn)	
-	get_owner().add_child(player_ob)
-	turn_change()
+	playerAdd(Powerful)
 	pass # Replace with function body.
 
 
 func _on_Wizard_pressed():	
-	var player_ob = Wizard.instance().Set_whether_left_player(turn)	
-	get_owner().add_child(player_ob)
-	turn_change()
+	playerAdd(Wizard)
 	pass # Replace with function body.
 
 
 
 func _on_Shotgun_pressed():
-	var player_ob = Shotgun.instance().Set_whether_left_player(turn)	
+	playerAdd(Shotgun)
+	pass # Replace with function body.
+
+func playerAdd(player:Object):
+	var player_ob = player.instance().Set_whether_left_player(turn)	
 	get_owner().add_child(player_ob)
 	turn_change()
+	pass
+
+func _on_Main_turnChange():
 	pass # Replace with function body.

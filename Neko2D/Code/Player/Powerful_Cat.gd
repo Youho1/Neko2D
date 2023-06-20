@@ -12,6 +12,4 @@ func _ready():
 
 func Set_whether_left_player(left): #左プレイヤーかどうか設定
 	.Set_whether_left_player(left) #もしこの部分にエラーが出たら . の前にsuperと書いてみてください
-	if leftP:
-		scale=Vector2(-1,1)
 	return self
