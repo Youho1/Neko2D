@@ -17,7 +17,7 @@ func _ready():
 
 func turn_change():
 #	if !turn:
-#		hide()
+#		queue_free()
 	turn=!turn
 	pass
 

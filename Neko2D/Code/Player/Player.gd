@@ -16,8 +16,8 @@ const usually_slipper = preload("res://Scene/Player/slipper_tmp.tscn")
 const heavy_slipper = preload("res://Scene/Player/slipper_tmp.tscn")
 var throw_MaxN = 1 #投げられる回数
 var throw_Count #投げた数
-export var throw_slipper_posi = Vector2(20,0) #スリッパの出現場所(プレイヤーからずらす距離)
-export var throw_MaxForce = 40 #投げられる最大威力
+@export var throw_slipper_posi = Vector2(20,0) #スリッパの出現場所(プレイヤーからずらす距離)
+@export var throw_MaxForce = 40 #投げられる最大威力
 
 var throw_posi = Vector2.ZERO #投げる位置(ドラック入力開始地点)
 var throw_input = false #投げる入力を始めているかどうか
@@ -73,6 +73,8 @@ func _process(delta):
 					
 			else:
 				throw_input = false
+				
+			if 
 #	pass
 
 
