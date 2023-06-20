@@ -38,7 +38,7 @@ func _on_Shotgun_pressed():
 	pass # Replace with function body.
 
 func playerAdd(player:Object):
-	var player_ob = player.instance().Set_whether_left_player(turn)	
+	var player_ob = player.instantiate().Set_whether_left_player(turn)	
 	get_owner().add_child(player_ob)
 	turn_change()
 	pass
