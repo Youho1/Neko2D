@@ -28,7 +28,7 @@ func thrown(throw_force:float,curveSlipper:bool,throw_direction:Vector2):
 	curve=curveSlipper
 	direction=throw_direction
 	direction=direction.normalized()
-	print("thrown"+str(force)+" curve:"+str(curve)+" 方向"+str(direction.angle()))
+	print("thrown"+str(force)+" curve:"+str(curve)+str(direction))
 	move=true
 	timer=0
 	return self

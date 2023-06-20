@@ -1,14 +1,15 @@
 extends Area2D
-const DEFAULT_speed = 200
+const DEFAULT_speed = 1.5
 var speed = DEFAULT_speed
 
 func _ready():
 	pass
 
 func _process(delta):
-	var random_y = rand_range(0, 401)
 	var velocity = Vector2()
-	velocity.x += speed
+	var random_speed = rand_range(200, 401)
+	var move = random_speed / speed 
+	velocity.x += move
 	position += velocity * delta
-	velocity.y += random_y
+	velocity.y += move
 	position += velocity * delta
