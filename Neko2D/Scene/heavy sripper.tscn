@@ -4,16 +4,18 @@
 [ext_resource path="res://Scene/heavy sripper.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 146.697
+radius = 80.5247
 
 [node name="heavy sripper" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="SlipperHeavy" type="Sprite" parent="."]
+position = Vector2( 0, 359 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 6, 3 )
+position = Vector2( 3, 359 )
 rotation = 1.18682
-scale = Vector2( 0.9, 1.85 )
+scale = Vector2( 0.5, 1 )
 shape = SubResource( 1 )

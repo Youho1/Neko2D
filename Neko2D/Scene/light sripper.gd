@@ -1,12 +1,14 @@
 extends Area2D
-var screen_size
+const DEFAULT_speed = 500
+var speed = DEFAULT_speed
 
 func _ready():
-	screen_size = get_viewport_rect().size
+	pass
 
 func _process(delta):
 	var velocity = Vector2()
-	velocity.x += 300
+	var random_y = rand_range(0, 401)
+	velocity.x += speed
 	position += velocity * delta
-	velocity.y += 300
+	velocity.y += random_y
 	position += velocity * delta
