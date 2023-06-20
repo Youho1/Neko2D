@@ -52,37 +52,9 @@ func _ready():
 	pass 
 
 func _process(delta):
-	if canMove:
-		_stateMachine.ChangeState(moveState)
-	if canThrow:
-		_stateMachine.ChangeState(throwState)
 	CheckActionConditions()
 	_stateMachine.currentState._process(delta)
-	#左のターンで自分が左プレイヤーの時、右のターンで自分が右プレイヤーの時のみ入力
-	if (leftTurn && leftP)||(!leftTurn && !leftP):		
-		# 投げる入力
-		if throw_Count<throw_MaxN:
-			if Input.is_action_pressed("ui_accept"):
-				if Input.is_action_just_pressed("mouse_left"):
-					# ドラッグ開始時にマウスの座標を記録
-					throw_posi = get_global_mouse_position()
-					throw_input=true
-					print("始点:" + str(throw_posi))
-				elif throw_input && Input.is_action_just_released("mouse_left"):
-					# ドラッグ終了時にマウスの座標を取得し、距離と方向を計算
-					var mouse_posi = get_global_mouse_position()
-					var force = (mouse_posi - throw_posi).length()/5.0
-					var direction = -(mouse_posi - throw_posi).normalized()
-					force = clamp(force, 0.1, throw_MaxForce)
-					
-					if leftP && direction.x>0:
-						throw(throw_slipper_ob, force, direction)
-					elif !leftP && direction.x<0:
-						throw(throw_slipper_ob, force, direction)
-					throw_input = false
-					
-			else:
-				throw_input = false
+			
 #	pass
 
 
@@ -117,5 +89,5 @@ func turn_change(turn:bool): #現在のターン
 
 func CheckActionConditions():
 	canMove = !isThrowing and (Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up"))
-	canThrow = !isThrowing and Input.is_action_just_pressed("Throw")
+	canThrow = !isThrowing and Input.is_action_pressed("ui_accept") and throw_Count < throw_MaxN and (leftTurn && leftP) || (!leftTurn && !leftP)
 	pass

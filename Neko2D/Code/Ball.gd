@@ -6,4 +6,6 @@ func _ready():
 func FlyTheBall(direction : Vector2, power : float):
 	direction.normalized()
 	apply_central_impulse(direction * power)
+	var position = self.transform.origin
+	
 	pass

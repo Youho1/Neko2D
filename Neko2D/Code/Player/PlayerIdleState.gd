@@ -11,6 +11,13 @@ func _Enter():
 
 func _process(delta):
 	super._process(delta)
+	# 移動入力
+	if _player.canMove:
+		_stateMachine.ChangeState(_player.moveState)
+	
+	# 投げる入力
+	if _player.canThrow:
+		_stateMachine.ChangeState(_player.throwState)
 	pass
 
 
