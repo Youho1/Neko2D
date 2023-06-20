@@ -7,7 +7,7 @@ func _ready():
 
 func _process(delta):
 	var velocity = Vector2()
-	var random_speed = rand_range(200, 401)
+	var random_speed = randf_range(200, 401)
 	var move = random_speed / speed 
 	velocity.x += move
 	position += velocity * delta
