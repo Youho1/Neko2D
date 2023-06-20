@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://di4afas0n37rk"]
 
-[ext_resource path="res://Code/Player/slipper_tmp.gd" type="Script" id=1]
-[ext_resource path="res://Resources/slipper2.png" type="Texture" id=2]
+[ext_resource type="Script" path="res://Code/Player/slipper_tmp.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ctlreppnpxyph" path="res://Resources/slipper2.png" id="2"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 298.5, 302 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(597, 604)
 
 [node name="slipper" type="Area2D"]
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 2 )
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1, -2.38419e-07 )
-scale = Vector2( 0.1, 0.1 )
-shape = SubResource( 1 )
+position = Vector2(1, -2.38419e-07)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("1")
