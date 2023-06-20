@@ -87,7 +87,7 @@ func _process(delta):
 
 
 func throw(slipper_ob:Object,force:float=throw_MaxForce,direction:Vector2=Vector2(1,0),curve:bool=false): #スリッパを投げる
-	var slipper = slipper_ob.instance().thrown(force,curve,direction)
+	var slipper = slipper_ob.instantiate().thrown(force,curve,direction)
 	slipper.position = position + throw_slipper_posi
 	if leftP:
 		slipper.name="L_"+slipper.name

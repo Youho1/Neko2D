@@ -11,6 +11,7 @@ func _process(delta):
 	super._process(delta)
 	if not _player.canMove:
 		_stateMachine.ChangeState(_player.idleState)
+		
 	#移動処理
 	var velocity=0
 	

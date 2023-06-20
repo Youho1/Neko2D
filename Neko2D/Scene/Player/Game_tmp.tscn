@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6y7buieexiv3"]
+[gd_scene load_steps=3 format=3 uid="uid://b6y7buieexiv3"]
 
-[ext_resource type="PackedScene" path="res://Scene/Player/Player_selection_menu.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://df5r2mmuhcwnq" path="res://Scene/Player/Player_selection_menu.tscn" id="2"]
 [ext_resource type="Script" path="res://Code/Player/Game_tmp.gd" id="3"]
-[ext_resource type="PackedScene" uid="uid://kho22wjruln3" path="res://Scene/Player/Powerful_Cat.tscn" id="3_qsald"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("3")
@@ -23,8 +22,5 @@ offset_right = 419.0
 offset_bottom = 217.0
 toggle_mode = true
 text = "curve"
-
-[node name="Powerful_Cat" parent="." instance=ExtResource("3_qsald")]
-position = Vector2(123, 229)
 
 [connection signal="turnChange" from="." to="Player_selection_menu" method="_on_Main_turnChange"]

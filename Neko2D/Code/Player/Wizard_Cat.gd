@@ -6,7 +6,7 @@ var curveSlipper = true #変化球かどうか
 #もし .～～()という部分にエラーが出たら.の前にsuperと書いてみてください
 
 func _ready():
-#	super._ready()
+	super._ready()
 	pass # Replace with function body.
 
 

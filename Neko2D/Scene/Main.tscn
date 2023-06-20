@@ -1,55 +1,55 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://cbvnpj1728rnx"]
 
-[ext_resource path="res://Resources/soccer_field.png" type="Texture" id=2]
+[ext_resource type="Texture2D" uid="uid://bstmea35eavct" path="res://Resources/soccer_field.png" id="2"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20, 40 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(40, 80)
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 300 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(20, 600)
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 500, 10 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(1000, 20)
 
 [node name="Main" type="Node2D"]
 
-[node name="SoccerField" type="Sprite" parent="."]
-position = Vector2( 512.5, 303.5 )
-scale = Vector2( 2.054, 1.71795 )
-texture = ExtResource( 2 )
+[node name="SoccerField" type="Sprite2D" parent="."]
+position = Vector2(512.5, 303.5)
+scale = Vector2(2.054, 1.71795)
+texture = ExtResource("2")
 
 [node name="Goal_Left" type="Area2D" parent="."]
-position = Vector2( 46, 303 )
+position = Vector2(46, 303)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal_Left"]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [node name="Goal_Right" type="Area2D" parent="."]
-position = Vector2( 977, 305 )
+position = Vector2(977, 305)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal_Right"]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [node name="Wall_Left" type="Area2D" parent="."]
-position = Vector2( 28, 310 )
+position = Vector2(28, 310)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Left"]
-shape = SubResource( 2 )
+shape = SubResource("2")
 
 [node name="Wall_Right" type="Area2D" parent="."]
-position = Vector2( 995, 302 )
+position = Vector2(995, 302)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Right"]
-shape = SubResource( 2 )
+shape = SubResource("2")
 
 [node name="Ceiling" type="Area2D" parent="."]
-position = Vector2( 512, 10 )
+position = Vector2(512, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
-shape = SubResource( 3 )
+shape = SubResource("3")
 
 [node name="Floor" type="Area2D" parent="."]
-position = Vector2( 513, 597 )
+position = Vector2(513, 597)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource( 3 )
+shape = SubResource("3")
