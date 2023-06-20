@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://kho22wjruln3"]
+[gd_scene load_steps=4 format=3 uid="uid://briek6xp26m82"]
 
 [ext_resource type="Script" path="res://Code/Player/Powerful_Cat.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://17okhpb1tmo" path="res://Resources/soccer_ball.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cit7m2hp2h8q5" path="res://Resources/soccer_ball.png" id="2"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(597, 604)

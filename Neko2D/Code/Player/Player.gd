@@ -34,7 +34,7 @@ var throw_input = false #投げる入力を始めているかどうか
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	throw_Count=0
-	moving_range.x = get_node("/root/Main/left_top_player_posi").position.y
+	moving_range.x = get_node("/root/Main/left_top_player_posi").position.x
 	moving_range.y = get_node("/root/Main/right_bottom_player_posi").position.y
 	LR_player_posi.x = get_node("/root/Main/left_top_player_posi").position.x
 	LR_player_posi.y = get_node("/root/Main/right_bottom_player_posi").position.x
@@ -57,7 +57,7 @@ func _process(delta):
 	if canThrow:
 		_stateMachine.ChangeState(throwState)
 	CheckActionConditions()
-		
+	_stateMachine.currentState._process(delta)
 	#左のターンで自分が左プレイヤーの時、右のターンで自分が右プレイヤーの時のみ入力
 	if (leftTurn && leftP)||(!leftTurn && !leftP):		
 		# 投げる入力

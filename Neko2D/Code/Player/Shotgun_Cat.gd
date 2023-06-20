@@ -9,6 +9,8 @@ func _ready():
 	super._ready()
 	pass # Replace with function body.
 
+func _process(delta):
+	super._process(delta)
 
 func throw(slipper_ob:Object,force:float=throw_MaxForce,direction:Vector2=Vector2(1,0),curve:bool=false): #スリッパを投げる
 	for i in range(Slipper_ang.size()):
