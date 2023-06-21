@@ -10,7 +10,7 @@ func _init(player : Player, stateMachine : PlayerStateMachine, anim : String):
 	self._anim = anim
 
 func _Enter():
-	print("I Enter %s State." % _anim)
+	#print("I Enter %s State." % _anim)
 	pass
 
 func _process(delta):
@@ -18,5 +18,5 @@ func _process(delta):
 	pass
 	
 func _Exit():
-	print("I exit %s State." % _anim)
+	#print("I exit %s State." % _anim)
 	pass

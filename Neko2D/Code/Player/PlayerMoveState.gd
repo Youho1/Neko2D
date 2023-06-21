@@ -24,7 +24,7 @@ func _process(delta):
 	#プレイヤーの移動
 	velocity = velocity*_player.speed
 	_player.position.y+=velocity*delta
-	_player.position.y=clamp(_player.position.y,_player.moving_range.x,_player.moving_range.y)
+	#_player.position.y=clamp(_player.position.y,_player.moving_range.x,_player.moving_range.y)
 	
 func _Exit():
 	super._Exit()
