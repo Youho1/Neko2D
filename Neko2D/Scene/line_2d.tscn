@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://5ul4migo6xvn"]
+
+[ext_resource type="Script" path="res://Code/Line2D.gd" id="1_htsbm"]
+
+[node name="Line2D" type="Line2D"]
+script = ExtResource("1_htsbm")
