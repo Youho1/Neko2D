@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://di4afas0n37rk"]
+[gd_scene load_steps=4 format=3 uid="uid://d110b43rfrkm"]
 
 [ext_resource type="Script" path="res://Code/Player/slipper_tmp.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cip4ynphgt2kf" path="res://Resources/slipper2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dkeqbxpht6s8e" path="res://Resources/slipper2.png" id="2"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(597, 604)
