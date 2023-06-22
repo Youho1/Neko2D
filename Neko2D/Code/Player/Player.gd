@@ -5,7 +5,7 @@ class_name Player
 var speed=300
 var moving_range =  Vector2.ZERO #プレイヤーが動ける範囲(上,下)
 var LR_player_posi =  Vector2.ZERO #左右のプレイヤーの位置(左,右)
-#var leftP = true #左のプレイヤーかどうか
+var leftP = true #左のプレイヤーかどうか
 #var leftTurn = true #現在、左のターンかどうか
 var while_throw_input=false
 
@@ -74,13 +74,13 @@ func throw(slipper_ob:Object,force:float=throw_MaxForce,direction:Vector2=Vector
 	print("力:" + str(force) + " 方向:" + str(direction.angle()))
 	pass
 
-#func Set_whether_left_player(left:bool): #左プレイヤーかどうか設定
-#	leftP=left
-#	if leftP:
-#		position.x=LR_player_posi.x
-#	else:
-#		position.x=LR_player_posi.y
-#	return self
+func Set_whether_left_player(left:bool): #このプレイヤーが左プレイヤーかどうか設定
+	leftP=left
+	if leftP:
+		position.x=LR_player_posi.x
+	else:
+		position.x=LR_player_posi.y
+	return self
 
 func slipper_change(slipper_ob:Object): #投げるスリッパを変える
 	throw_slipper_ob = slipper_ob

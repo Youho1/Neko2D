@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wctaf5nq4gmk"
-path="res://.godot/imported/neko_punch.png-670f3c0af0a6fab0506ce6ef6aaaabb4.ctex"
+uid="uid://b4dqup34d3w0r"
+path="res://.godot/imported/wizard_cat_front.png-30eb33fac7470237efb322adc9fc2331.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/neko_punch.png"
-dest_files=["res://.godot/imported/neko_punch.png-670f3c0af0a6fab0506ce6ef6aaaabb4.ctex"]
+source_file="res://wizard_cat_front.png"
+dest_files=["res://.godot/imported/wizard_cat_front.png-30eb33fac7470237efb322adc9fc2331.ctex"]
 
 [params]
 
