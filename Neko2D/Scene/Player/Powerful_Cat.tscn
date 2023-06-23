@@ -8,7 +8,7 @@ size = Vector2(424.576, 638.437)
 
 [node name="Powerful_Cat" type="Area2D"]
 script = ExtResource("1")
-throw_slipper_posi = null
+throw_MaxN = 2
 throw_MaxForce = 50
 
 [node name="Sprite" type="Sprite2D" parent="."]

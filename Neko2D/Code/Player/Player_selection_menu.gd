@@ -16,8 +16,8 @@ func _ready():
 #	pass
 
 func turn_change():
-#	if !turn:
-#		queue_free()
+	if !turn:
+		queue_free()
 	turn=!turn
 	pass
 

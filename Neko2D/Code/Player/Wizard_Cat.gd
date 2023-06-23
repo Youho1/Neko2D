@@ -19,7 +19,7 @@ func Set_whether_left_player(left): #左プレイヤーかどうか設定
 	super.Set_whether_left_player(left) 
 	if leftP:
 		scale=Vector2(-1,1)
-	return self
+	return self 
 
 func curve_change(curve:bool):
 	curveSlipper=curve
