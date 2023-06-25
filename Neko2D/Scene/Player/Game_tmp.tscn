@@ -8,7 +8,7 @@
 position = Vector2(513, 121)
 
 [node name="left_top_player_posi" type="Marker2D" parent="."]
-position = Vector2(61, 44)
+position = Vector2(93, 103)
 
 [node name="right_bottom_player_posi" type="Marker2D" parent="."]
 position = Vector2(951, 554)

@@ -17,7 +17,13 @@ func _process(delta):
 	pass
 
 func _draw():
-	draw_line(start, end, color,width)
+	#draw_line(start, end, color,width)
+	var points = PackedVector2Array()
+	var d=(end-start).normalized()
+	points.append(end)	
+	points.append(start+Vector2(d.y,-d.x)*width/2)
+	points.append(start+Vector2(-d.y,d.x)*width/2)
+	draw_polygon(points,PackedColorArray([color]))
 	pass
 
 func set_value(start_point:Vector2=self.start,end_point:Vector2=self.end,color:Color=self.color,width:float=self.width):

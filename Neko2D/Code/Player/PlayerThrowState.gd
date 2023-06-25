@@ -5,10 +5,11 @@ var throw_input_posi = Vector2.ZERO #ドラック入力開始地点
 var Dividing_factor = 5.0#ドラック距離を力に変換するときの除算係数
 
 var throw_line #投げる方向を描写するノード
-var line_MaxWidth=50 #線の太さ上限
-var line_MinWidth=1 #線の太さ下限
-var line_color=Color(255,255,255,0.8) #線の色
-var line_length=100 #線の長さ
+var line_MaxWidth:float #線の太さ上限
+var line_MinWidth:float #線の太さ下限
+var line_color:Color #線の色
+var line_color_error:Color #外側に打とうとしている時の線の色
+var line_length:float #線の長さ
 
 var maxForce_circle #ドラック時に力の最大値を表示する円を描写するノード
 
@@ -27,9 +28,11 @@ func _Enter():
 	throw_input_posi = _player.get_global_mouse_position()
 	print("始点:" + str(throw_input_posi))
 	
-	line_MaxWidth=10
+	line_MaxWidth=40
 	line_MinWidth=1
 	line_color=Color(255,255,255,0.8)
+	line_color_error=Color(255,0,0,0.8)
+	line_length=100
 	
 	circle_MaxR=100
 	circle_MinR=1
@@ -62,9 +65,15 @@ func _process(delta):
 		
 		force = clamp(force, 0.1, _player.throw_MaxForce) #力が大きくなりすぎないようにする
 		
+		#投げる方向の描画
 		var line_width=force/_player.throw_MaxForce*(line_MaxWidth-line_MinWidth)+line_MinWidth #0~maxForceの値をline_MinWidth~line_MaxWidthにする
-		throw_line.set_value(_player.throw_slipper_posi,direction*line_length,line_color,line_width)
+		if (_player.leftP && direction.x>0)||(!_player.leftP && direction.x<0):
+			throw_line.set_value(_player.throw_slipper_posi,direction*line_length,line_color,line_width)
+		else:
+			throw_line.set_value(_player.throw_slipper_posi,direction*line_length,line_color_error,line_width)
 		
+		
+		#マウス位置に描画する円
 		var circle_R=force/_player.throw_MaxForce*(circle_MaxR-circle_MinR)+circle_MinR #0~maxForceの値をcircleの上限下限にする
 		var mouse_circle_posi=mouse_posi
 		if mouse_circle_posi.distance_to(throw_input_posi)>(_player.throw_MaxForce*Dividing_factor):
@@ -73,12 +82,12 @@ func _process(delta):
 		#mouse_circle_posi.y = clamp(mouse_posi.y,(throw_input_posi.y-_player.throw_MaxForce*Dividing_factor),(throw_input_posi.y+_player.throw_MaxForce*Dividing_factor))
 		mouse_circle.set_value(mouse_circle_posi,circle_R)
 		
+		#投げる処理
 		if _player.isThrowing && Input.is_action_just_released("mouse_left"):
 			# ドラッグ終了時(ボタンを離したとき)
 			
 			#var force = 50
 			#var direction = (throw_input_posi - _player.position).normalized()
-			
 			
 			#画面の内側にしか投げられないようにする
 			if (_player.leftP && direction.x>0)||(!_player.leftP && direction.x<0): #左プレイヤーの時は右方向に、右プレイヤーの時は左方向にしか投げない

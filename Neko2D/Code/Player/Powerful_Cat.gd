@@ -13,11 +13,8 @@ func _process(delta):
 	super._process(delta)
 
 func Set_whether_left_player(left): #左プレイヤーかどうか設定
-	super.Set_whether_left_player(left) #もしこの部分にエラーが出たら . の前にsuperと書いてみてください
-	if !leftP:
-		throw_slipper_posi.x=-1*throw_slipper_posi.x
-	
-	return self
+	super.Set_whether_left_player(left)	
+	#return self
 
 
 func _on_draw():
