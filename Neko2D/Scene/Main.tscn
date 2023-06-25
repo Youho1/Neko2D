@@ -60,4 +60,4 @@ shape = SubResource("3")
 
 [node name="Line2D" parent="." groups=["Player"] instance=ExtResource("4_h13g8")]
 
-[node name="PlayerCreater" type="Node" parent="."]
+[node name="PlayerGenerator" type="Node" parent="."]
