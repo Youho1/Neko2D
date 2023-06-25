@@ -1,9 +1,9 @@
 extends Node2D
 
-class_name draw_throw_line
+class_name throw_mouseCircle
 
-var start:Vector2=Vector2.ZERO
-var end:Vector2=Vector2.ZERO
+var center:Vector2=Vector2.ZERO
+var radius:float=1.0
 var color:Color=Color(0,0,0)
 var width:float=1.0
 
@@ -17,13 +17,12 @@ func _process(delta):
 	pass
 
 func _draw():
-	draw_line(start, end, color,width)
+	draw_circle(center,radius,color)
 	pass
 
-func set_value(start_point:Vector2=self.start,end_point:Vector2=self.end,color:Color=self.color,width:float=self.width):
-	start=start_point
-	end=end_point
+func set_value(center:Vector2=self.center,radius:float=self.radius,color:Color=self.color):
+	self.center=center
+	self.radius=radius
 	self.color=color
-	self.width=width
 	queue_redraw()
 	pass

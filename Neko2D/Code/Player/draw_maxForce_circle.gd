@@ -29,11 +29,11 @@ func _draw():
 		draw_line(points[i], points[(i + 1)%points.size()], color,width)
 	pass
 
-func set_value(center:Vector2=Vector2.ZERO,radius:float=1.0,color:Color=Color(0,0,0),width:float=2,s:int=40):
+func set_value(center:Vector2=self.center,radius:float=self.radius,color:Color=self.color,width:float=self.width,step:int=self.step):
 	self.center=center
 	self.radius=radius
 	self.color=color
 	self.width=width
-	self.step=s
+	self.step=step
 	queue_redraw()
 	pass

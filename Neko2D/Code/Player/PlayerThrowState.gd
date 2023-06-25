@@ -12,6 +12,11 @@ var line_length=100 #線の長さ
 
 var maxForce_circle #ドラック時に力の最大値を表示する円を描写するノード
 
+var mouse_circle #ドラック時にマウスの位置に円を描画するノード
+var circle_MaxR=80 #半径の太さ上限
+var circle_MinR=1 #半径の太さ下限
+var circle_color=Color(255,255,255,0.8)
+
 func _init(player:Player, stateMachine:PlayerStateMachine, anim:String):
 	super._init(player, stateMachine, anim)
 
@@ -26,15 +31,25 @@ func _Enter():
 	line_MinWidth=1
 	line_color=Color(255,255,255,0.8)
 	
+	circle_MaxR=100
+	circle_MinR=1
+	circle_color=Color(255,255,255,0.8)
+	
 	var main = "/root/Main"
 	throw_line= draw_throw_line.new()
 	throw_line.name="throw_line"
 	_player.add_child(throw_line)
+	throw_line.set_value(_player.throw_slipper_posi,_player.throw_slipper_posi,line_color,line_MinWidth)
+	
 	maxForce_circle=draw_maxForce_circle.new()
 	maxForce_circle.name="maxForce_circle"
 	_player.add_child_avoid_error(maxForce_circle,main)
-	
 	maxForce_circle.set_value(throw_input_posi,_player.throw_MaxForce*Dividing_factor,Color(255,255,255,0.5),5)
+	
+	mouse_circle=throw_mouseCircle.new()
+	mouse_circle.name="mouse_circle"
+	_player.add_child_avoid_error(mouse_circle,main)
+	mouse_circle.set_value(throw_input_posi,circle_MinR,circle_color)
 
 func _process(delta):
 	super._process(delta)
@@ -49,6 +64,14 @@ func _process(delta):
 		
 		var line_width=force/_player.throw_MaxForce*(line_MaxWidth-line_MinWidth)+line_MinWidth #0~maxForceの値をline_MinWidth~line_MaxWidthにする
 		throw_line.set_value(_player.throw_slipper_posi,direction*line_length,line_color,line_width)
+		
+		var circle_R=force/_player.throw_MaxForce*(circle_MaxR-circle_MinR)+circle_MinR #0~maxForceの値をcircleの上限下限にする
+		var mouse_circle_posi=mouse_posi
+		if mouse_circle_posi.distance_to(throw_input_posi)>(_player.throw_MaxForce*Dividing_factor):
+			mouse_circle_posi=throw_input_posi+(mouse_posi-throw_input_posi).normalized()*_player.throw_MaxForce*Dividing_factor
+		#mouse_circle_posi.x = clamp(mouse_posi.x,(throw_input_posi.x-_player.throw_MaxForce*Dividing_factor),(throw_input_posi.x+_player.throw_MaxForce*Dividing_factor))
+		#mouse_circle_posi.y = clamp(mouse_posi.y,(throw_input_posi.y-_player.throw_MaxForce*Dividing_factor),(throw_input_posi.y+_player.throw_MaxForce*Dividing_factor))
+		mouse_circle.set_value(mouse_circle_posi,circle_R)
 		
 		if _player.isThrowing && Input.is_action_just_released("mouse_left"):
 			# ドラッグ終了時(ボタンを離したとき)
@@ -75,4 +98,5 @@ func _Exit():
 	_player.isThrowing = false
 	maxForce_circle.queue_free()
 	throw_line.queue_free()
+	mouse_circle.queue_free()
 	print(_player.throw_Count)
