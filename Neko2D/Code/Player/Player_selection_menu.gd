@@ -18,7 +18,7 @@ func _ready():
 #	pass
 
 func turn_change():
-	if !turn:
+	if turn: #2人プレイヤーにするときは!turnにしてください
 		queue_free()
 		for i in range(players.size()):
 			players[i].set_process(true)
