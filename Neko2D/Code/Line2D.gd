@@ -4,7 +4,7 @@ func _ready():
 	pass
 
 func update_draw_line(player : Player, speed : float, delta : float):
-	if player.throw_input == false : 
+	if player.canThrow == false : 
 		clear_points()	
 		return
 	var max_points = 300
