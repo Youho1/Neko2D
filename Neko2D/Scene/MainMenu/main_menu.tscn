@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvbruoka1t5ta"]
+[gd_scene load_steps=6 format=3 uid="uid://dvbruoka1t5ta"]
 
 [ext_resource type="Texture2D" uid="uid://but6wyw57v3kf" path="res://Resources/background.jpg" id="1_4oyxb"]
 [ext_resource type="Script" path="res://Code/MainMenu/CanvasLayer.gd" id="2_6l27p"]
 [ext_resource type="Theme" uid="uid://crhyifwtrtr73" path="res://Scene/MainMenu/new_theme.tres" id="3_bt3m1"]
+[ext_resource type="Script" path="res://Code/MainMenu/Sound.gd" id="4_j303e"]
+[ext_resource type="AudioStream" uid="uid://dtm0lkk4x1vbh" path="res://SEorBGM/BGM2.mp3" id="6_8matn"]
 
 [node name="MainMenu" type="Node"]
 
@@ -71,6 +73,13 @@ text = "Play"
 layout_mode = 2
 size_flags_vertical = 3
 text = "Quit"
+
+[node name="Sound" type="Node" parent="."]
+script = ExtResource("4_j303e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("6_8matn")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="CanvasLayer" method="_on_button_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonQuit" to="CanvasLayer" method="_on_button_quit_pressed"]
