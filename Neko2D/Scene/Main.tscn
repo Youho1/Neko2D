@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbvnpj1728rnx"]
+[gd_scene load_steps=7 format=3 uid="uid://cbvnpj1728rnx"]
 
 [ext_resource type="Script" path="res://Code/Main.gd" id="1_qqson"]
 [ext_resource type="Texture2D" uid="uid://bstmea35eavct" path="res://Resources/soccer_field.png" id="2"]
-[ext_resource type="PackedScene" uid="uid://briek6xp26m82" path="res://Scene/Player/Powerful_Cat.tscn" id="2_mbxo1"]
 [ext_resource type="PackedScene" uid="uid://5ul4migo6xvn" path="res://Scene/line_2d.tscn" id="4_h13g8"]
 
 [sub_resource type="RectangleShape2D" id="1"]
@@ -16,7 +15,7 @@ size = Vector2(1000, 20)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_qqson")
-player = NodePath("Powerful_Cat")
+player = NodePath("")
 
 [node name="SoccerField" type="Sprite2D" parent="."]
 position = Vector2(512.5, 303.5)
@@ -59,7 +58,6 @@ position = Vector2(513, 597)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("3")
 
-[node name="Powerful_Cat" parent="." instance=ExtResource("2_mbxo1")]
-position = Vector2(70, 73)
-
 [node name="Line2D" parent="." groups=["Player"] instance=ExtResource("4_h13g8")]
+
+[node name="PlayerCreater" type="Node" parent="."]
