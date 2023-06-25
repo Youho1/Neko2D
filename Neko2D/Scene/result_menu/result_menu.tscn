@@ -75,6 +75,7 @@ expand_icon = true
 
 [node name="Sound" type="Node" parent="."]
 script = ExtResource("5_sdvrl")
+PlayerWon = true
 
 [node name="Win" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("5_5sebl")
