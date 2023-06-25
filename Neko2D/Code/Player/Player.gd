@@ -81,7 +81,7 @@ func Set_whether_left_player(left:bool): #このプレイヤーが左プレイ�
 		position.x=LR_player_posi.x
 	else:
 		position.x=LR_player_posi.y
-		throw_slipper_posi.x=-throw_slipper_posi.x
+		throw_slipper_posi.x=-1*throw_slipper_posi.x
 	return self
 
 func slipper_change(slipper_ob:Object): #投げるスリッパを変える
