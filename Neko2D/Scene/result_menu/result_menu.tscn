@@ -57,7 +57,7 @@ offset_bottom = 200.0
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/result/PanelContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/result/PanelContainer/MarginContainer"]
+[node name="Back To Title" type="Button" parent="CanvasLayer/result/PanelContainer/MarginContainer"]
 clip_contents = true
 layout_mode = 2
 icon = ExtResource("2_ctp21")
@@ -75,5 +75,5 @@ stream = ExtResource("6_x032p")
 [node name="Button" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("8_t4e0y")
 
-[connection signal="mouse_entered" from="CanvasLayer/result/PanelContainer/MarginContainer/Button" to="CanvasLayer" method="_on_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/result/PanelContainer/MarginContainer/Button" to="CanvasLayer" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/result/PanelContainer/MarginContainer/Back To Title" to="CanvasLayer" method="_on_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/result/PanelContainer/MarginContainer/Back To Title" to="CanvasLayer" method="_on_button_pressed"]
