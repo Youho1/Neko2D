@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbvnpj1728rnx"]
 
 [ext_resource type="Script" path="res://Code/Main.gd" id="1_qqson"]
-[ext_resource type="Texture2D" uid="uid://bstmea35eavct" path="res://Resources/soccer_field.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cupc6qqqvue75" path="res://Resources/soccer_field.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://5ul4migo6xvn" path="res://Scene/line_2d.tscn" id="4_h13g8"]
 
 [sub_resource type="RectangleShape2D" id="1"]

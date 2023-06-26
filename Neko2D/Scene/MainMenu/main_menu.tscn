@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Code/MainMenu/CanvasLayer.gd" id="2_6l27p"]
 [ext_resource type="Theme" uid="uid://crhyifwtrtr73" path="res://Scene/MainMenu/new_theme.tres" id="3_bt3m1"]
 [ext_resource type="Script" path="res://Code/MainMenu/Sound.gd" id="4_j303e"]
-[ext_resource type="AudioStream" uid="uid://ctonme8svbp66" path="res://SEorBGM/BGM1.mp3" id="4_yfnq5"]
-[ext_resource type="AudioStream" uid="uid://dtm0lkk4x1vbh" path="res://SEorBGM/BGM2.mp3" id="6_8matn"]
-[ext_resource type="AudioStream" uid="uid://i73gvtcvr7hd" path="res://SEorBGM/BGM3.mp3" id="7_c13r3"]
-[ext_resource type="AudioStream" uid="uid://cubp0br30bawm" path="res://SEorBGM/BGM4.mp3" id="8_hhb1i"]
+[ext_resource type="AudioStream" uid="uid://cpvnomu5kxdjo" path="res://SEorBGM/BGM1.mp3" id="4_yfnq5"]
+[ext_resource type="AudioStream" uid="uid://bb5f4tkf3bj6b" path="res://SEorBGM/BGM2.mp3" id="6_8matn"]
+[ext_resource type="AudioStream" uid="uid://dgm6yi40s5h2i" path="res://SEorBGM/BGM3.mp3" id="7_c13r3"]
+[ext_resource type="AudioStream" uid="uid://ewiutb4uej8n" path="res://SEorBGM/BGM4.mp3" id="8_hhb1i"]
 
 [node name="MainMenu" type="Node"]
 
