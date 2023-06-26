@@ -22,6 +22,6 @@ func throw(slipper_ob:Object,force:float=throw_MaxForce,direction:Vector2=Vector
 func Set_whether_left_player(left): #左プレイヤーかどうか設定
 	super.Set_whether_left_player(left) #もしこの部分にエラーが出たら . の前にsuperと書いてみてください
 	if leftP:
-		scale=Vector2(-1,1)
-	return self
+		$Sprite.scale*=Vector2(-1,1)
+	#return self
 

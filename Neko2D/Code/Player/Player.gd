@@ -39,7 +39,8 @@ func _ready():
 	if moving_range.x==moving_range.y:
 		moving_range.y=get_viewport_rect().size.y
 	throw_slipper_ob = preload("res://Scene/Player/slipper_tmp.tscn")
-	Set_whether_left_player(leftP)
+	#print("ready")
+	#Set_whether_left_player(leftP)
 	position.y = moving_range.x
 	
 	isMoving = false
@@ -60,8 +61,7 @@ func _process(delta):
 
 func throw(slipper_ob:Object,force:float=throw_MaxForce,direction:Vector2=Vector2(1,0),curve:bool=false): #スリッパを投げる
 	#スリッパの生成
-	var slipper = slipper_ob.instantiate().thrown(force,curve,direction)
-	slipper.position = position + throw_slipper_posi
+	var slipper = slipper_ob.instantiate()
 	
 	#投げたプレイヤーに応じてスリッパの名前を変える
 	if leftP:
@@ -69,20 +69,23 @@ func throw(slipper_ob:Object,force:float=throw_MaxForce,direction:Vector2=Vector
 	else:
 		slipper.name="R_"+slipper.name
 	
-	add_child_avoid_error(slipper,slipper_parent)
-		
+	add_child_avoid_error(slipper,slipper_parent)	
+	slipper.thrown(force,curve,direction)
+	slipper.position = position + throw_slipper_posi
+	
 	#throw_Count+=1
 	print("力:" + str(force) + " 方向:" + str(direction.angle()))
 	pass
 
 func Set_whether_left_player(left:bool): #このプレイヤーが左プレイヤーかどうか設定
 	leftP=left
+	print("set")
 	if leftP:
 		position.x=LR_player_posi.x
 	else:
 		position.x=LR_player_posi.y
-		throw_slipper_posi.x=-throw_slipper_posi.x
-	return self
+		throw_slipper_posi.x=-1*throw_slipper_posi.x
+	# return self
 
 func slipper_change(slipper_ob:Object): #投げるスリッパを変える
 	throw_slipper_ob = slipper_ob

@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://cn2f2a36xllou"
+=======
+uid="uid://ctonme8svbp66"
+>>>>>>> b43da0298e856ec130b4f9ea1182568ff5a2131d
 path="res://.godot/imported/BGM1.mp3-5ed607d5359b2a2911e470f1c25b6835.mp3str"
 
 [deps]
