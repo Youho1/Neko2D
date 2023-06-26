@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://briek6xp26m82"]
+[gd_scene load_steps=6 format=3 uid="uid://briek6xp26m82"]
 
 [ext_resource type="Script" path="res://Code/Player/Powerful_Cat.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://b03cywcmjbo8l" path="res://Resources/powerful_cat.png" id="2_1emnd"]
+[ext_resource type="Texture2D" uid="uid://ss375va7e1qe" path="res://Resources/skill_Button/Nomal.PNG" id="2_y5o1m"]
+[ext_resource type="Texture2D" uid="uid://bplwia2w0mk0n" path="res://Resources/skill_Button/Heavy.PNG" id="3_wpue8"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(424.576, 638.437)
 
 [node name="Powerful_Cat" type="Area2D"]
 script = ExtResource("1")
+sButton_tex = [ExtResource("2_y5o1m"), ExtResource("3_wpue8")]
+skill_Consumed_sp = [1, 4]
 throw_MaxForce = 50
 
 [node name="Sprite" type="Sprite2D" parent="."]

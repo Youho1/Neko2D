@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg25xduhfe21n"]
+
+[ext_resource type="Script" path="res://Code/slipper_control.gd" id="1_irgla"]
+[ext_resource type="PackedScene" uid="uid://di4afas0n37rk" path="res://Scene/Player/slipper_tmp.tscn" id="2_anowp"]
+
+[node name="Slipper_control" type="Node2D"]
+script = ExtResource("1_irgla")
+slipper_type = PackedStringArray("Nomal", "Heavy", "Shotgun", "Curve")
+slipper_ob = [ExtResource("2_anowp"), ExtResource("2_anowp"), ExtResource("2_anowp"), ExtResource("2_anowp")]

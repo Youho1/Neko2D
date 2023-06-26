@@ -16,6 +16,14 @@ func Set_whether_left_player(left): #左プレイヤーかどうか設定
 	super.Set_whether_left_player(left)	
 	#return self
 
+#func skill_mode_change(mode:int):
+#	#それぞれに対応したものを書く
+#	match mode:
+#		0:
+#			throw_slipper_type="Nomal"
+#		1:
+#			throw_slipper_type="Heavy"
+#		_:
+#			print("エラー")
+#	pass
 
-func _on_draw():
-	pass # Replace with function body.

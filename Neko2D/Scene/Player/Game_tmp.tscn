@@ -12,3 +12,6 @@ position = Vector2(93, 103)
 
 [node name="right_bottom_player_posi" type="Marker2D" parent="."]
 position = Vector2(951, 554)
+
+[node name="player_skillButton_posi" type="Marker2D" parent="."]
+position = Vector2(186, 206)

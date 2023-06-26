@@ -15,7 +15,7 @@ func _process(delta):
 func throw(slipper_ob:Object,force:float=throw_MaxForce,direction:Vector2=Vector2(1,0),curve:bool=false): #スリッパを投げる
 	for i in range(Slipper_ang.size()):
 		var dir_tmp = direction.normalized()+Slipper_ang[i].normalized()
-		super.throw(slipper_ob,force,(dir_tmp)) #もしこの部分にエラーが出たら . の前にsuperと書いてみてください
+		super.throw(slipper_ob,force,(dir_tmp)) 
 	pass
 
 

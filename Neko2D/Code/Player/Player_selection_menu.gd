@@ -6,6 +6,8 @@ const Powerful = preload("res://Scene/Player/Powerful_Cat.tscn")
 const Wizard = preload("res://Scene/Player/Wizard_Cat.tscn")
 const Shotgun = preload("res://Scene/Player/Shotgun_Cat.tscn")
 
+const slipper_control=preload("res://Scene/slipper_control.tscn")
+
 var players:Array = []
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +24,9 @@ func turn_change():
 		queue_free()
 		for i in range(players.size()):
 			players[i].set_process(true)
+		var sc=slipper_control.instantiate()
+		get_owner().add_child(sc)
+	
 	turn=!turn
 	pass
 

@@ -8,6 +8,8 @@ size = Vector2(1040, 1050)
 
 [node name="Wizard_Cat" type="Area2D"]
 script = ExtResource("1")
+SButton_tex_path = null
+usually_slipper = null
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0.954884, 0)

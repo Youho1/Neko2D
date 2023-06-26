@@ -1,15 +1,14 @@
 extends Player
 
 var curveSlipper = true #変化球かどうか
-var curveButton = preload("res://Scene/Player/curve_button.tscn")
-@export var curveButton_Posi = Vector2.ZERO
+
 
 func _ready():
 	super._ready()
-	var cButton = curveButton.instantiate()
-	cButton.pressed.connect(curve_change)
-	super.add_child_avoid_error(cButton,"/root/Main")
-	cButton.position=curveButton_Posi
+	#var cButton = curveButton.instantiate()
+	#cButton.pressed.connect(curve_change)
+	#super.add_child_avoid_error(cButton,"/root/Main")
+	#cButton.position=curveButton_Posi
 	pass # Replace with function body.
 
 

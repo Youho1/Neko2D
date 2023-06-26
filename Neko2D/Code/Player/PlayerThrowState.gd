@@ -86,13 +86,9 @@ func _process(delta):
 		if _player.isThrowing && Input.is_action_just_released("mouse_left"):
 			# ドラッグ終了時(ボタンを離したとき)
 			
-			#var force = 50
-			#var direction = (throw_input_posi - _player.position).normalized()
-			
 			#画面の内側にしか投げられないようにする
 			if (_player.leftP && direction.x>0)||(!_player.leftP && direction.x<0): #左プレイヤーの時は右方向に、右プレイヤーの時は左方向にしか投げない
-				_player.throw(_player.throw_slipper_ob, force, direction)
-				_player.throw_Count += 1
+				_player.throw(_player.throw_slipper_type, force, direction)
 				_player.canThrow = false #入力を終わりにする
 				
 			else: #画面の外側に投げようとしている時、入力をキャンセルする
@@ -108,4 +104,4 @@ func _Exit():
 	maxForce_circle.queue_free()
 	throw_line.queue_free()
 	mouse_circle.queue_free()
-	print(_player.throw_Count)
+	#print(_player.throw_Count)
