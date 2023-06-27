@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbvnpj1728rnx"]
+[gd_scene load_steps=10 format=3 uid="uid://cbvnpj1728rnx"]
 
 [ext_resource type="Script" path="res://Code/Main.gd" id="1_qqson"]
-[ext_resource type="Texture2D" uid="uid://bstmea35eavct" path="res://Resources/soccer_field.png" id="2"]
-[ext_resource type="PackedScene" uid="uid://5ul4migo6xvn" path="res://Scene/line_2d.tscn" id="4_h13g8"]
-[ext_resource type="PackedScene" path="res://Scene/Ball.tscn" id="4_pr7m4"]
+[ext_resource type="Texture2D" uid="uid://cupc6qqqvue75" path="res://Resources/soccer_field.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://cfo1klvysfvnk" path="res://Scene/Player/Player_selection_menu.tscn" id="4_jdjx3"]
+[ext_resource type="PackedScene" uid="uid://c8450oidd7jb8" path="res://Scene/Ball.tscn" id="4_pr7m4"]
+[ext_resource type="PackedScene" uid="uid://bc25gyrxeymbp" path="res://Scene/Player/skill_point.tscn" id="5_0jj1a"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(40, 80)
@@ -14,9 +15,11 @@ size = Vector2(20, 600)
 [sub_resource type="RectangleShape2D" id="3"]
 size = Vector2(1000, 20)
 
-[node name="Main2" type="Node2D" node_paths=PackedStringArray("player")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aiqb"]
+size = Vector2(60, 20)
+
+[node name="Main" type="Node2D"]
 script = ExtResource("1_qqson")
-player = NodePath("")
 
 [node name="SoccerField" type="Sprite2D" parent="."]
 position = Vector2(512.5, 303.5)
@@ -39,12 +42,14 @@ shape = SubResource("1")
 position = Vector2(28, 310)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Left"]
+position = Vector2(-20, 0)
 shape = SubResource("2")
 
 [node name="Wall_Right" type="Area2D" parent="."]
 position = Vector2(995, 302)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Right"]
+position = Vector2(21, 0)
 shape = SubResource("2")
 
 [node name="Ceiling" type="Area2D" parent="."]
@@ -59,9 +64,44 @@ position = Vector2(513, 597)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("3")
 
-[node name="Line2D" parent="." groups=["Player"] instance=ExtResource("4_h13g8")]
-
-[node name="PlayerGenerator" type="Node" parent="."]
-
 [node name="RigidBody2D" parent="." instance=ExtResource("4_pr7m4")]
-position = Vector2(510, 301)
+position = Vector2(512, 301)
+gravity_scale = 0.0
+
+[node name="GoalWallLeft2" type="Area2D" parent="."]
+position = Vector2(48, 253)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalWallLeft2"]
+shape = SubResource("RectangleShape2D_1aiqb")
+
+[node name="GoalWallLeft" type="Area2D" parent="."]
+position = Vector2(48, 353)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalWallLeft"]
+shape = SubResource("RectangleShape2D_1aiqb")
+
+[node name="GoalWallRight" type="Area2D" parent="."]
+position = Vector2(973, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalWallRight"]
+shape = SubResource("RectangleShape2D_1aiqb")
+
+[node name="GoalWallRight2" type="Area2D" parent="."]
+position = Vector2(973, 356)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalWallRight2"]
+shape = SubResource("RectangleShape2D_1aiqb")
+
+[node name="Player_selection_menu" parent="." instance=ExtResource("4_jdjx3")]
+position = Vector2(513, 163)
+
+[node name="left_top_player_posi" type="Marker2D" parent="."]
+position = Vector2(93, 103)
+
+[node name="right_bottom_player_posi" type="Marker2D" parent="."]
+position = Vector2(951, 554)
+
+[node name="player_skillButton_posi" type="Marker2D" parent="."]
+position = Vector2(186, 206)
+
+[node name="Skill_point" parent="." instance=ExtResource("5_0jj1a")]
