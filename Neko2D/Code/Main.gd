@@ -1,10 +1,11 @@
 extends Node2D
 
-var drawLiner : draw_liner
 # 今、playerはプレイヤーシーンをインスペクターでアタッチして使っています。
-@export var player : Player
+var player : Player
+@export var ball : Ball
 func _ready():
-	drawLiner = $Line2D
+	#Player = get_node("/Player")
+	pass
 	
 func _process(delta):
-	drawLiner.update_draw_line(player, 20.0, delta)
+	pass

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbvnpj1728rnx"]
+[gd_scene load_steps=8 format=3 uid="uid://cbvnpj1728rnx"]
 
 [ext_resource type="Script" path="res://Code/Main.gd" id="1_qqson"]
-[ext_resource type="Texture2D" uid="uid://cupc6qqqvue75" path="res://Resources/soccer_field.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bstmea35eavct" path="res://Resources/soccer_field.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://5ul4migo6xvn" path="res://Scene/line_2d.tscn" id="4_h13g8"]
+[ext_resource type="PackedScene" path="res://Scene/Ball.tscn" id="4_pr7m4"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(40, 80)
@@ -61,3 +62,6 @@ shape = SubResource("3")
 [node name="Line2D" parent="." groups=["Player"] instance=ExtResource("4_h13g8")]
 
 [node name="PlayerGenerator" type="Node" parent="."]
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_pr7m4")]
+position = Vector2(510, 301)
