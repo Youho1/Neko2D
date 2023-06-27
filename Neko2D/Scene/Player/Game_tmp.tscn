@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6y7buieexiv3"]
+[gd_scene load_steps=3 format=3 uid="uid://b6y7buieexiv3"]
 
 [ext_resource type="PackedScene" uid="uid://cfo1klvysfvnk" path="res://Scene/Player/Player_selection_menu.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bc25gyrxeymbp" path="res://Scene/Player/skill_point.tscn" id="2_eovnc"]
 
 [node name="Main" type="Node2D"]
 
@@ -15,3 +16,5 @@ position = Vector2(951, 554)
 
 [node name="player_skillButton_posi" type="Marker2D" parent="."]
 position = Vector2(186, 206)
+
+[node name="Skill_point" parent="." instance=ExtResource("2_eovnc")]

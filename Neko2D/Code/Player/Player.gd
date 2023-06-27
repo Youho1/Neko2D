@@ -39,6 +39,7 @@ var isThrowing : bool
 var throw_slipper_type #実際に投げるスリッパ
 @export var throw_slipper_posi = Vector2(20,0) #スリッパの出現場所(プレイヤーからずらす距離)(左プレイヤー基準)
 @export var throw_MaxForce = 40 #投げられる最大威力
+@export var slipper_MaxNum=3 #残るスリッパの数
 
 #@export var usually_slipper = preload("res://Scene/Player/slipper_tmp.tscn")
 
@@ -67,6 +68,9 @@ func _ready():
 	throwState = PlayerThrowState.new(self, _stateMachine, "Throw")
 	_stateMachine.Initialize(idleState)
 	
+	if skill_Consumed_sp.size()>0:
+		Consumed_sp=skill_Consumed_sp[0]
+	
 	pass 
 
 func _process(delta):
@@ -93,6 +97,7 @@ func throw(slipper_ob,force:float=throw_MaxForce,direction:Vector2=Vector2(1,0),
 	#add_child_avoid_error(slipper,slipper_parent)	
 	#slipper.thrown(force,curve,direction)
 	#slipper.position = position + throw_slipper_posi
+	skill_point-=Consumed_sp
 	emit_signal("throw_slipper",slipper_ob,force,direction,position + throw_slipper_posi)
 	
 	print(throw_slipper_type+" 力:" + str(force) + " 方向:" + str(direction.angle()))
@@ -169,6 +174,7 @@ func skill_mode_change(mode:int):
 	match mode:
 		0:
 			throw_slipper_type="Nomal"
+			Consumed_sp=skill_Consumed_sp[0]
 		_:
 			print("エラー")
 	pass

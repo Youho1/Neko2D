@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc25gyrxeymbp"]
+
+[ext_resource type="Script" path="res://Code/Player/Skill_point.gd" id="1_odrvq"]
+[ext_resource type="FontFile" uid="uid://idck0pqnsyi7" path="res://Resources/Mplus2-Medium.ttf" id="2_50hl3"]
+
+[node name="Skill_point" type="Node2D"]
+script = ExtResource("1_odrvq")
+
+[node name="Skill_point" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_50hl3")
+theme_override_font_sizes/font_size = 20
+text = "保持ポイント："
+
+[node name="Skill_point_n" type="Label" parent="Skill_point"]
+layout_mode = 0
+offset_left = 145.0
+offset_right = 285.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_50hl3")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+
+[node name="Skill_point_timer" type="Label" parent="Skill_point/Skill_point_n"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 7.0
+offset_right = 164.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("2_50hl3")
+theme_override_font_sizes/font_size = 15
+
+[node name="Consumed_sp" type="Label" parent="."]
+offset_top = 35.0
+offset_right = 140.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("2_50hl3")
+theme_override_font_sizes/font_size = 20
+text = "消費ポイント："
+
+[node name="Consumed_sp_n" type="Label" parent="Consumed_sp"]
+layout_mode = 0
+offset_left = 145.0
+offset_right = 285.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_50hl3")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
