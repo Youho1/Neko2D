@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wctaf5nq4gmk"
-path="res://.godot/imported/neko_punch.png-670f3c0af0a6fab0506ce6ef6aaaabb4.ctex"
+uid="uid://s13ehqxyhayt"
+path="res://.godot/imported/Curve.PNG-b883cb7c056c8881fa83e0aa43daf406.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/neko_punch.png"
-dest_files=["res://.godot/imported/neko_punch.png-670f3c0af0a6fab0506ce6ef6aaaabb4.ctex"]
+source_file="res://Resources/skill_Button/Curve.PNG"
+dest_files=["res://.godot/imported/Curve.PNG-b883cb7c056c8881fa83e0aa43daf406.ctex"]
 
 [params]
 

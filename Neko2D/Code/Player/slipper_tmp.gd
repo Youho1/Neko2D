@@ -31,8 +31,9 @@ func thrown(throw_force:float,curveSlipper:bool,throw_direction:Vector2):
 	print("thrown"+str(force)+" curve:"+str(curve)+str(direction))
 	move=true
 	timer=0
-	return self
+	#return self
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+

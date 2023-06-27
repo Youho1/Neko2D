@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmy61o1b8x6a4"]
+
+[ext_resource type="Texture2D" uid="uid://ss375va7e1qe" path="res://Resources/skill_Button/Nomal.PNG" id="1_l15m7"]
+[ext_resource type="Script" path="res://Code/Player/skill_button.gd" id="1_pa4n7"]
+[ext_resource type="StyleBox" uid="uid://6gu8wibovkdb" path="res://Scene/Player/skill_button.tres" id="2_b6icq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqasp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l5ga8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k5otg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqsjq"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_l15m7")
+centered = false
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.729412)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0.258824)
+theme_override_styles/normal = ExtResource("2_b6icq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yqasp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l5ga8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k5otg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqsjq")
+icon = ExtResource("1_l15m7")
+script = ExtResource("1_pa4n7")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

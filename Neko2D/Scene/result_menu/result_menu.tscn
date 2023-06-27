@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfhvw4fqbkxkj"]
+
+[ext_resource type="Texture2D" uid="uid://cd4hw3ci0ix13" path="res://Resources/result_background.jpg" id="1_0pta5"]
+[ext_resource type="Texture2D" uid="uid://cykgvtcu5qpxm" path="res://Scene/result_menu/result.png" id="1_1ou21"]
+[ext_resource type="Texture2D" uid="uid://b08duqrvkqbdc" path="res://Scene/result_menu/back_icon_155778.png" id="2_ctp21"]
+[ext_resource type="Script" path="res://Code/ResultMenu/Result.gd" id="2_iid67"]
+[ext_resource type="Theme" uid="uid://b44hsg432fxir" path="res://Scene/result_menu/new_theme.tres" id="2_smada"]
+[ext_resource type="Script" path="res://Code/ResultMenu/ResultSound.gd" id="5_sdvrl"]
+
+[node name="Result_menu" type="Node"]
+
+[node name="BackGround" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0pta5")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1ou21")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_iid67")
+
+[node name="result" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_smada")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/result"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/result/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 108
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/result"]
+layout_mode = 1
+offset_left = 87.0
+offset_top = 100.0
+offset_right = 187.0
+offset_bottom = 200.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/result/PanelContainer"]
+layout_mode = 2
+
+[node name="Back To Title" type="Button" parent="CanvasLayer/result/PanelContainer/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+icon = ExtResource("2_ctp21")
+expand_icon = true
+
+[node name="Sound" type="Node" parent="."]
+script = ExtResource("5_sdvrl")
+PlayerWon = true
+
+[node name="Win" type="AudioStreamPlayer2D" parent="Sound"]
+
+[node name="GameOver" type="AudioStreamPlayer2D" parent="Sound"]
+
+[node name="Button" type="AudioStreamPlayer2D" parent="Sound"]
+
+[connection signal="mouse_entered" from="CanvasLayer/result/PanelContainer/MarginContainer/Back To Title" to="CanvasLayer" method="_on_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/result/PanelContainer/MarginContainer/Back To Title" to="CanvasLayer" method="_on_button_pressed"]

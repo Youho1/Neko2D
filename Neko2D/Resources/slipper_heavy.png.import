@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dwmbc2tiic67t"
+=======
+uid="uid://ddqn1qjdvtgdm"
+>>>>>>> origin/main
 path="res://.godot/imported/slipper_heavy.png-847cc7440bd0add170850f3c1556d371.ctex"
 metadata={
 "vram_texture": false

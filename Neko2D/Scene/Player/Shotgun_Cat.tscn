@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://caayiejpc653s"]
+[gd_scene load_steps=4 format=3 uid="uid://cnctmiweecebe"]
 
 [ext_resource type="Script" path="res://Code/Player/Shotgun_Cat.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://wctaf5nq4gmk" path="res://Resources/neko_punch.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://wctaf5nq4gmk" path="res://Resources/Shotgun_cat.png" id="2_2wl3r"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(890, 890)
@@ -12,7 +12,7 @@ Slipper_ang = [Vector2(0.8, 1), Vector2(0, 0), Vector2(-0.8, 1)]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2")
+texture = ExtResource("2_2wl3r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.500003, -0.499999)
